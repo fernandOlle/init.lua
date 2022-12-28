@@ -1,3 +1,6 @@
+local function map(m,k,v)
+  vim.keymap.set(m,k,v,{silent=true})
+end
 
 vim.g.mapleader = " "
 vim.keymap.set("n", "<leader>pv", vim.cmd.Ex)
@@ -7,17 +10,21 @@ vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv")
 
 -- My Own Bindings --
 
-vim.keymap.set("n", "<leader>e", ":Lex 30<cr>")
+map('n', '<C-Q>', ':q!<cr>')
+
+-- vim.keymap.set("n", "<leader>e", ":Lex 30<cr>")
 -- Better window navigation
 vim.keymap.set("n", "<A-h>", "<C-w>h")
 vim.keymap.set("n", "<A-j>", "<C-w>j")
 vim.keymap.set("n", "<A-k>", "<C-w>k")
 vim.keymap.set("n", "<A-l>", "<C-w>l")
 
-vim.keymap.set("n", "<A-s>", ":vs<cr>")
-vim.keymap.set("n", "<A-w>", ":vh<cr>")
+vim.keymap.set("n", "<S-w>", ":w<cr>")
 
-vim.keymap.set("n", "<S-e>", ":Explore<cr>")
+vim.keymap.set("n", "<A-s>", ":vs<cr>")
+vim.keymap.set("n", "<A-w>", ":sp<cr>")
+
+vim.keymap.set("n", "<S-e>", ":Neotree<cr>")
 -- Resize with arrows
 vim.keymap.set("n", "<C-Up>", ":resize -2<CR>")
 vim.keymap.set("n", "<C-Down>", ":resize +2<CR>")
